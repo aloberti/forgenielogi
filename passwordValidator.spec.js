@@ -2,11 +2,11 @@ const checkPassword = require('./passwordValidator')
 
 describe('Check Password Length', () => {
     test('False test for length', () => {
-        const result = checkPassword("a23456")
+        const result = checkPassword("a23456789",11)
         expect(result).toBe(false)
     })
     test('True test for length', () => {
-        const result = checkPassword("a2345678")
+        const result = checkPassword("a2345678910",11)
         expect(result).toBe(true)
     })
 })
