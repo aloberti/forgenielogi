@@ -1,5 +1,8 @@
 function checkPassword(password){
-    return password.length >= 8
+    if (password.length >= 8){
+        return /\d/.test(password)
+    }
+    return false
 }
 
 module.exports = checkPassword ;
