@@ -2,11 +2,11 @@ const checkPassword = require('./passwordValidator')
 
 describe('Check Password Length', () => {
     test('False test for length', () => {
-        const result = checkPassword("123456")
+        const result = checkPassword("a23456")
         expect(result).toBe(false)
     })
     test('True test for length', () => {
-        const result = checkPassword("12345678")
+        const result = checkPassword("a2345678")
         expect(result).toBe(true)
     })
 })
@@ -18,6 +18,16 @@ describe('Check Password for number', () => {
     })
     test('True test for number', () => {
         const result = checkPassword("jhgvfco1iouhy")
+        expect(result).toBe(true)
+    })
+})
+describe('Check Password for letter', () => {
+    test('False test for > 1', () => {
+        const result = checkPassword("12345678")
+        expect(result).toBe(false)
+    })
+    test('True test for number', () => {
+        const result = checkPassword("a12345678")
         expect(result).toBe(true)
     })
 })

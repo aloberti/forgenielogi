@@ -1,6 +1,9 @@
 function checkPassword(password){
     if (password.length >= 8){
-        return /\d/.test(password)
+        if (/\d/.test(password)){
+            return /[a-zA-Z]/.test(password)
+        }
+        return false
     }
     return false
 }
