@@ -1,4 +1,3 @@
-import {Account} from "./account.mjs"
 import {accountQueryDAO} from "./accountQueryDAO.mjs"
 
 export const accountQuery = {
