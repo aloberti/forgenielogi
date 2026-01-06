@@ -10,6 +10,14 @@ export const accountService = {
   getAccountList() {
     return accountDAO.retrieveAccountList()
   },
-  saveAccount(id, lastName, firstName) {},
-  getAccount(id) {},
+  saveAccount(id, lastName, firstName) {
+    var accountList = accountDAO.retrieveAccountList()
+    var indexToChange = accountList.findIndex((account)=> account.id==id)
+    var accountToChange = accountList.at(indexToChange-1)
+    var newAccount = new Account(accountToChange[0],"Changement",accountToChange[2],null)
+    accountDAO.updateAccount(newAccount)
+  },
+  getAccount(id) {
+    return accountDAO.retrieveAccount(id);
+  },
 };
