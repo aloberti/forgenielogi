@@ -5,11 +5,15 @@ const bankDAO = {
         const balances = {
             '1': 1000,
             '2': 2500,
-            '3': 500
+            '3': 500,
         };
     
         return balances[accountId];
     }
 };
 
-module.exports = bankDAO;
+function debitAccount(accountId,amount){
+    console.log("Debit money")
+}
+
+module.exports = [bankDAO,debitAccount];
