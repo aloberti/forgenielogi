@@ -11,6 +11,7 @@ export const accountService = {
     return accountDAO.retrieveAccountList()
   },
   saveAccount(id, lastName, firstName) {
+    //const account = accputDAO.restore(id)
     var accountList = accountDAO.retrieveAccountList()
     var indexToChange = accountList.findIndex((account)=> account.id==id)
     var accountToChange = accountList.at(indexToChange-1)
